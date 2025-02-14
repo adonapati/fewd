@@ -1,0 +1,125 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff6347;
+}
+
+#main-heading {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.menu-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.menu-table th, .menu-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.menu-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.menu-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.specialties-list {
+    list-style-type: upper-roman;
+    padding-left: 40px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.specialties-list li {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.specialties-list li:hover {
+    color: #ff6347;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Carousel styling */
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+  }
