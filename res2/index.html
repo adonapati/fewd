@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Cheeks Q</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f8f8;
+        }
+        .header {
+            background: black;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.squarespace-cdn.com/content/v1/61aa60502b7f5f4d6d1ce8c9/70f83f07-4911-4d51-9df5-b4d9b6a224a6/Sweet-Cheeks-interior_1500x1000.jpg?format=2500w') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .menu-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .menu-section h2 {
+            margin-bottom: 15px;
+        }
+        .menu-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto; 
+            white-space: nowrap;
+            padding: 10px;
+            }
+
+            .menu-card {
+            flex: 0 0 calc(33.33% - 20px);
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            min-width: 250px; 
+            }
+
+            .menu-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            }
+
+        .price {
+            font-weight: bold;
+            color: #e91e63;
+        }
+        .footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://images.squarespace-cdn.com/content/v1/61aa60502b7f5f4d6d1ce8c9/ceffa749-7d86-4a4b-ad60-f14f6846ef0a/__Stack_Left_Right_Justify_White.png?format=1500w" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#reservations">Reservations</a>
+            <a href="#events">Events</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>WELCOME!</h1>
+            <h2>PULL UP A CHAIR & RELAX.</h2>
+        </div>
+    </section>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Breakfast Menu
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol>
+                        <li><strong>Pancakes - $8.99</strong>: Fluffy buttermilk pancakes served with syrup and butter.</li>
+                        <li><strong>Cheese Omelette - $7.99</strong>: Eggs with cheddar cheese, served with toast.</li>
+                        <li><strong>Belgian Waffles - $9.49</strong>: Crispy golden waffles topped with whipped cream and berries.</li>
+                        <li><strong>Avocado Toast - $10.99</strong>: Fresh avocado on toasted sourdough with cherry tomatoes.</li>
+                        <li><strong>Breakfast Burrito - $11.99</strong>: Scrambled eggs, cheese, and sausage wrapped in a flour tortilla.</li>
+                        <li><strong>French Toast - $8.49</strong>: Thick-cut bread dipped in egg batter, served with maple syrup.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Lunch Menu
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol>
+                        <li><strong>Grilled Chicken Sandwich - $12.99</strong>: Served with lettuce, tomato, and aioli on a toasted bun.</li>
+                        <li><strong>Caesar Salad - $10.99</strong>: Crisp romaine lettuce, parmesan, croutons, and Caesar dressing.</li>
+                        <li><strong>Cheeseburger - $13.99</strong>: Angus beef patty with cheddar cheese, lettuce, and tomato.</li>
+                        <li><strong>Veggie Wrap - $9.99</strong>: Fresh vegetables, hummus, and feta cheese wrapped in a whole wheat tortilla.</li>
+                        <li><strong>Club Sandwich - $11.99</strong>: Turkey, bacon, lettuce, tomato, and mayo on toasted bread.</li>
+                        <li><strong>Tomato Basil Soup - $6.99</strong>: Served with a side of garlic bread.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Dinner Menu
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol>
+                        <li><strong>Grilled Salmon - $18.99</strong>: Served with roasted vegetables and lemon butter sauce.</li>
+                        <li><strong>Steak Frites - $22.99</strong>: Juicy ribeye steak with a side of crispy fries.</li>
+                        <li><strong>Pasta Primavera - $14.99</strong>: Fresh seasonal vegetables tossed with penne pasta.</li>
+                        <li><strong>Chicken Parmesan - $16.99</strong>: Breaded chicken breast topped with marinara and mozzarella.</li>
+                        <li><strong>Shrimp Scampi - $19.99</strong>: Garlic butter shrimp served over linguine pasta.</li>
+                        <li><strong>Vegetable Stir-Fry - $13.99</strong>: Mixed vegetables in a savory soy-ginger sauce over rice.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="kung.jpg" alt="Kung Pao Chicken">
+                <h3>Kung Pao Chicken</h3>
+                <p>Spicy stir-fried Chinese dish with vegetables.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQepQxpqOZMV30BgXpgrkEPTVPZl2ExoemN5w&s" alt="Kung Pao Chicken">
+                <h3>Malai Kofta</h3>
+                <p>Rich and creamy Indian curry served with naan</p>
+            </div>
+            <div class="menu-card">
+                <img src="garlic.jpg" alt="Kung Pao Chicken">
+                <h3>Garlic Bread</h3>
+                <p>Rich and creamy Indian curry served with naan</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUa7WHAFUxO-UcQJGvpwGeo5S7nM_aF-sEDA&s"/>
+                <h3>Paneer Tikka</h3>
+                <p>Spicy stir-fried Chinese dish with vegetables.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrN_ZRoKGentHxAYeRRWwprg8XToNKbYOjxQ&s"/>
+                <h3>Chicken Biryani</h3>
+                <p>Spicy stir-fried Chinese dish with vegetables.</p>
+            </div>
+            <div class="menu-card">
+                <img src="pasta.jpg">
+                <h3>Pasta</h3>
+                <p>Rich and creamy Indian butter chicken with naan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: black; color: white; text-align: center; padding: 25px; font-size: 1.2rem; margin-top: 30px;">
+        <p>&copy; 2025 Sweet Cheeks Q. All Rights Reserved.</p>
+    </body>
+</html>
