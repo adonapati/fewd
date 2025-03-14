@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Clock</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .clock {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .clock::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #848484;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    
+    .clock .hour,
+    .clock .min,
+    .clock .sec {
+      position: absolute;
+      transform-origin: bottom;
+    }
+    
+    .clock .hour {
+      width: 6px;
+      height: 80px;
+      top: 70px;
+      left: 147px;
+      background-color: #848484;
+      border-radius: 6px 6px 0 0;
+    }
+    
+    .clock .min {
+      width: 4px;
+      height: 110px;
+      top: 40px;
+      left: 148px;
+      background-color: #484848;
+      border-radius: 4px 4px 0 0;
+    }
+    
+    .clock .sec {
+      width: 2px;
+      height: 120px;
+      top: 30px;
+      left: 149px;
+      background-color: #ff6767;
+      border-radius: 2px 2px 0 0;
+    }
+    
+    .numbers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .numbers > div {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+    
+    .numbers > div:nth-child(1) { top: 15px; left: 135px; }       /* 12 */
+    .numbers > div:nth-child(2) { top: 35px; right: 75px; }       /* 1 */
+    .numbers > div:nth-child(3) { top: 80px; right: 35px; }       /* 2 */
+    .numbers > div:nth-child(4) { top: 135px; right: 15px; }      /* 3 */
+    .numbers > div:nth-child(5) { bottom: 80px; right: 35px; }    /* 4 */
+    .numbers > div:nth-child(6) { bottom: 35px; right: 75px; }    /* 5 */
+    .numbers > div:nth-child(7) { bottom: 15px; left: 135px; }    /* 6 */
+    .numbers > div:nth-child(8) { bottom: 35px; left: 75px; }     /* 7 */
+    .numbers > div:nth-child(9) { bottom: 80px; left: 35px; }     /* 8 */
+    .numbers > div:nth-child(10) { top: 135px; left: 15px; }      /* 9 */
+    .numbers > div:nth-child(11) { top: 80px; left: 35px; }       /* 10 */
+    .numbers > div:nth-child(12) { top: 35px; left: 75px; }       /* 11 */
+    
+    .markers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .markers div {
+      position: absolute;
+      width: 4px;
+      height: 12px;
+      background-color: #333;
+      transform-origin: center 150px;
+      left: 148px;
+    }
+    
+    .markers div:nth-child(5n) {
+      height: 16px;
+      width: 6px;
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hour"></div>
+    <div class="min"></div>
+    <div class="sec"></div>
+    <div class="numbers">
+      <div>12</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+    </div>
+    <div class="markers">
+      <!-- Will be added by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    // Create hour markers
+    const markers = document.querySelector('.markers');
+    for (let i = 0; i < 60; i++) {
+      const marker = document.createElement('div');
+      marker.style.transform = `rotate(${i * 6}deg)`;
+      markers.appendChild(marker);
+    }
+    
+    function updateClock() {
+      const now = new Date();
+      
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours() % 12;
+      
+      // Calculate rotation angles
+      const secondsDegrees = (seconds / 60) * 360;
+      const minutesDegrees = ((minutes + seconds / 60) / 60) * 360;
+      const hoursDegrees = ((hours + minutes / 60) / 12) * 360;
+      
+      // Apply rotations
+      document.querySelector('.sec').style.transform = `rotate(${secondsDegrees}deg)`;
+      document.querySelector('.min').style.transform = `rotate(${minutesDegrees}deg)`;
+      document.querySelector('.hour').style.transform = `rotate(${hoursDegrees}deg)`;
+    }
+    
+    // Update every second
+    setInterval(updateClock, 1000);
+    
+    // Initial update
+    updateClock();
+  </script>
+</body>
+</html>
